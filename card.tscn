@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=3 uid="uid://dt1eufri3iidv"]
+
+[ext_resource type="Script" path="res://card.gd" id="1_7ao2h"]
+[ext_resource type="Texture2D" uid="uid://bc6twqyc4npmy" path="res://images/spade.png" id="1_81ujm"]
+[ext_resource type="Texture2D" uid="uid://dl3i55itq86pr" path="res://images/a.png" id="5_fwgb5"]
+[ext_resource type="Texture2D" uid="uid://ccw363gtigu0s" path="res://images/card-frame.png" id="20_lxbii"]
+
+[sub_resource type="Animation" id="Animation_8fhmg"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_4qbq6"]
+resource_name = "card_hover"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("offset:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7e5x8"]
+_data = {
+"RESET": SubResource("Animation_8fhmg"),
+"card_hover": SubResource("Animation_4qbq6")
+}
+
+[node name="card" type="Control"]
+custom_minimum_size = Vector2(128, 192)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 192.0
+script = ExtResource("1_7ao2h")
+variant = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7e5x8")
+}
+
+[node name="offset" type="Node2D" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="offset"]
+custom_minimum_size = Vector2(128, 192)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="background" type="TextureRect" parent="offset/PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("20_lxbii")
+expand_mode = 5
+
+[node name="CenterContainer" type="CenterContainer" parent="offset/PanelContainer"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="offset/PanelContainer/CenterContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="face_value" type="TextureRect" parent="offset/PanelContainer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("5_fwgb5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="suit" type="TextureRect" parent="offset/PanelContainer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_81ujm")
+expand_mode = 3
+stretch_mode = 5
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
