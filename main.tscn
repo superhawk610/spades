@@ -49,31 +49,27 @@ layout_mode = 2
 alignment = 1
 
 [node name="card" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer/left" instance=ExtResource("2_rw6bn")]
-custom_minimum_size = Vector2(102.4, 153.6)
 layout_mode = 2
-variant = "hand"
+flipped = true
 
 [node name="center" type="VBoxContainer" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
 [node name="card_top" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer/center" instance=ExtResource("2_rw6bn")]
-custom_minimum_size = Vector2(102.4, 153.6)
 layout_mode = 2
-variant = "hand"
+flipped = true
 
 [node name="card_bottom" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer/center" instance=ExtResource("2_rw6bn")]
-custom_minimum_size = Vector2(102.4, 153.6)
 layout_mode = 2
-variant = "hand"
+flipped = true
 
 [node name="right" type="VBoxContainer" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 alignment = 1
 
 [node name="card" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer/right" instance=ExtResource("2_rw6bn")]
-custom_minimum_size = Vector2(102.4, 153.6)
 layout_mode = 2
-variant = "hand"
+flipped = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
@@ -84,7 +80,7 @@ theme_override_constants/separation = -48
 alignment = 1
 
 [node name="player_icon" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/player_left"]
-custom_minimum_size = Vector2(92, 172)
+custom_minimum_size = Vector2(96, 172)
 layout_mode = 2
 texture = ExtResource("3_f01n7")
 expand_mode = 5
@@ -110,7 +106,7 @@ theme_override_constants/separation = -48
 alignment = 1
 
 [node name="player_icon" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/player_top"]
-custom_minimum_size = Vector2(144, 92)
+custom_minimum_size = Vector2(144, 96)
 layout_mode = 2
 texture = ExtResource("3_f01n7")
 expand_mode = 3
@@ -142,7 +138,7 @@ theme_override_constants/separation = -48
 alignment = 1
 
 [node name="player_icon" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/player_right"]
-custom_minimum_size = Vector2(92, 172)
+custom_minimum_size = Vector2(96, 172)
 layout_mode = 2
 texture = ExtResource("3_f01n7")
 expand_mode = 5
