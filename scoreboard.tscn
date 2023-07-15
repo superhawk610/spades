@@ -1,0 +1,131 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3n3nkbnx1kvb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnb2k"]
+bg_color = Color(0.109804, 0.109804, 0.109804, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_fu0wl"]
+font_size = 14
+
+[sub_resource type="SystemFont" id="SystemFont_tjd8l"]
+font_names = PackedStringArray("Sans-Serif")
+
+[sub_resource type="LabelSettings" id="LabelSettings_hj8hb"]
+font = SubResource("SystemFont_tjd8l")
+
+[sub_resource type="SystemFont" id="SystemFont_nvith"]
+font_names = PackedStringArray("Sans-Serif")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xl38b"]
+font = SubResource("SystemFont_nvith")
+
+[node name="scoreboard" type="PanelContainer"]
+custom_minimum_size = Vector2(210, 99)
+offset_right = 209.0
+offset_bottom = 99.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vnb2k")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Players"
+label_settings = SubResource("LabelSettings_fu0wl")
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "You & Bill"
+label_settings = SubResource("LabelSettings_hj8hb")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mike & Lisa"
+label_settings = SubResource("LabelSettings_hj8hb")
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Score"
+label_settings = SubResource("LabelSettings_fu0wl")
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+label_settings = SubResource("LabelSettings_xl38b")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+label_settings = SubResource("LabelSettings_xl38b")
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Bags
+"
+label_settings = SubResource("LabelSettings_fu0wl")
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+label_settings = SubResource("LabelSettings_xl38b")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+label_settings = SubResource("LabelSettings_xl38b")
+horizontal_alignment = 1

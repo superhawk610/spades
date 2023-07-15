@@ -27,6 +27,7 @@ var card_ranking = [
 var deck : Array
 var players = {}
 var points = {}
+var trick = []
 
 
 func shuffle():
@@ -46,6 +47,25 @@ func deal_player(name: String, variant: String):
 		player = Player.new(name, variant, deck)
 		players[name] = player
 	return player
+
+
+func place_bid(name: String, bid: int):
+	var player : Player = players.get(name)
+	if not player:
+		assert(false, "attempted to place bid for missing player %s" % name)
+	player.place_bid(bid)
+
+
+func can_play_card(card):
+	return true
+
+
+func play_card(card):
+	trick.append(card)
+
+
+func score_trick():
+	pass
 
 
 func score_round(team: String, bid: int, tricks: int):

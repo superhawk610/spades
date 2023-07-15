@@ -1,0 +1,149 @@
+[gd_scene load_steps=12 format=3 uid="uid://bd8g8jy8k5vju"]
+
+[ext_resource type="Texture2D" uid="uid://cco3dvf650su3" path="res://images/1.png" id="1_f2i4g"]
+[ext_resource type="Script" path="res://bid.gd" id="1_vpq2h"]
+[ext_resource type="Texture2D" uid="uid://8bcindwoi3mg" path="res://images/2.png" id="2_he3uu"]
+[ext_resource type="Texture2D" uid="uid://iwsm7pvqn62g" path="res://images/3.png" id="3_rgr3q"]
+[ext_resource type="Texture2D" uid="uid://decibnhirfo3u" path="res://images/4.png" id="4_x50ru"]
+[ext_resource type="Texture2D" uid="uid://dvhehs15kqnyj" path="res://images/5.png" id="5_y8x6u"]
+[ext_resource type="Texture2D" uid="uid://b51g1ssuehg3c" path="res://images/6.png" id="6_ck43a"]
+[ext_resource type="Texture2D" uid="uid://c5as36bvnfr0v" path="res://images/7.png" id="7_g0xpo"]
+[ext_resource type="Texture2D" uid="uid://cl10ejrx2xw3v" path="res://images/8.png" id="8_1gsae"]
+[ext_resource type="Texture2D" uid="uid://bcud0lxsn6n17" path="res://images/9.png" id="9_7duwg"]
+[ext_resource type="Texture2D" uid="uid://dfjlj85n73uet" path="res://images/10.png" id="10_lyt1p"]
+
+[node name="bid" type="PanelContainer"]
+custom_minimum_size = Vector2(400, 300)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -880.0
+offset_bottom = -420.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vpq2h")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Place Your Bid"
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="bid_1" type="TextureButton" parent="MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture_normal = ExtResource("1_f2i4g")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="bid_2" type="TextureButton" parent="MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture_normal = ExtResource("2_he3uu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="bid_3" type="TextureButton" parent="MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture_normal = ExtResource("3_rgr3q")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="bid_4" type="TextureButton" parent="MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture_normal = ExtResource("4_x50ru")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="bid_5" type="TextureButton" parent="MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture_normal = ExtResource("5_y8x6u")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="bid_6" type="TextureButton" parent="MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture_normal = ExtResource("6_ck43a")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="bid_7" type="TextureButton" parent="MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture_normal = ExtResource("7_g0xpo")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="bid_8" type="TextureButton" parent="MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture_normal = ExtResource("8_1gsae")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="bid_9" type="TextureButton" parent="MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture_normal = ExtResource("9_7duwg")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="bid_10" type="TextureButton" parent="MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture_normal = ExtResource("10_lyt1p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="bid_11" type="Button" parent="MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+text = "11"
+
+[node name="bid_12" type="Button" parent="MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+text = "12"
+
+[node name="bid_13" type="Button" parent="MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+text = "13"
+
+[node name="bid_nil" type="Button" parent="MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+text = "Nil"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/GridContainer/bid_1" to="." method="_on_button_pressed" binds= [1]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/GridContainer/bid_2" to="." method="_on_button_pressed" binds= [2]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/GridContainer/bid_3" to="." method="_on_button_pressed" binds= [3]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/GridContainer/bid_4" to="." method="_on_button_pressed" binds= [4]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/GridContainer/bid_5" to="." method="_on_button_pressed" binds= [5]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/GridContainer/bid_6" to="." method="_on_button_pressed" binds= [6]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/GridContainer/bid_7" to="." method="_on_button_pressed" binds= [7]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/GridContainer/bid_8" to="." method="_on_button_pressed" binds= [8]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/GridContainer/bid_9" to="." method="_on_button_pressed" binds= [9]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/GridContainer/bid_10" to="." method="_on_button_pressed" binds= [10]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/GridContainer/bid_11" to="." method="_on_button_pressed" binds= [11]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/GridContainer/bid_12" to="." method="_on_button_pressed" binds= [12]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/GridContainer/bid_13" to="." method="_on_button_pressed" binds= [13]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/GridContainer/bid_nil" to="." method="_on_button_pressed" binds= [0]]

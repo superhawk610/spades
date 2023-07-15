@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bu8scsjvu2lxb"]
+[gd_scene load_steps=9 format=3 uid="uid://bu8scsjvu2lxb"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_ase6c"]
 [ext_resource type="PackedScene" uid="uid://dt1eufri3iidv" path="res://card.tscn" id="2_rw6bn"]
 [ext_resource type="Texture2D" uid="uid://b8jr1nbxbqhd8" path="res://images/logo.png" id="2_skda4"]
 [ext_resource type="Texture2D" uid="uid://cjji0b5jxogl8" path="res://images/player.png" id="3_f01n7"]
+[ext_resource type="PackedScene" uid="uid://c3n3nkbnx1kvb" path="res://scoreboard.tscn" id="3_lwuid"]
+[ext_resource type="Script" path="res://card_drop.gd" id="4_jm8ee"]
+[ext_resource type="PackedScene" uid="uid://bd8g8jy8k5vju" path="res://bid.tscn" id="7_1lbyx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fx6w1"]
 bg_color = Color(0.0313726, 0.0313726, 0.0313726, 1)
@@ -34,42 +37,10 @@ texture = ExtResource("2_skda4")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer"]
+[node name="scoreboard" parent="PanelContainer/MarginContainer" instance=ExtResource("3_lwuid")]
 layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/CenterContainer"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 48
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="left" type="VBoxContainer" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="card" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer/left" instance=ExtResource("2_rw6bn")]
-layout_mode = 2
-flipped = true
-
-[node name="center" type="VBoxContainer" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="card_top" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer/center" instance=ExtResource("2_rw6bn")]
-layout_mode = 2
-flipped = true
-
-[node name="card_bottom" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer/center" instance=ExtResource("2_rw6bn")]
-layout_mode = 2
-flipped = true
-
-[node name="right" type="VBoxContainer" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="card" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer/right" instance=ExtResource("2_rw6bn")]
-layout_mode = 2
-flipped = true
+size_flags_horizontal = 8
+size_flags_vertical = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
@@ -132,6 +103,24 @@ layout_mode = 2
 theme_override_constants/separation = -48
 alignment = 1
 
+[node name="player_icon" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/player_hand"]
+custom_minimum_size = Vector2(144, 96)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_f01n7")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/player_hand/player_icon"]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 92.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_font_sizes/font_size = 12
+text = "You"
+horizontal_alignment = 1
+
 [node name="player_right" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = -48
@@ -153,3 +142,52 @@ theme_override_colors/font_color = Color(0.2, 0.2, 0.2, 1)
 theme_override_font_sizes/font_size = 12
 text = "Lisa"
 horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 48
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer"]
+layout_mode = 2
+script = ExtResource("4_jm8ee")
+
+[node name="left" type="VBoxContainer" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="card" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer/left" instance=ExtResource("2_rw6bn")]
+layout_mode = 2
+mouse_filter = 2
+flipped = true
+
+[node name="center" type="VBoxContainer" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="card_top" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer/center" instance=ExtResource("2_rw6bn")]
+layout_mode = 2
+mouse_filter = 2
+flipped = true
+
+[node name="card_bottom" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer/center" instance=ExtResource("2_rw6bn")]
+layout_mode = 2
+mouse_filter = 2
+flipped = true
+
+[node name="right" type="VBoxContainer" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="card" parent="PanelContainer/MarginContainer/CenterContainer/MarginContainer/HBoxContainer/right" instance=ExtResource("2_rw6bn")]
+layout_mode = 2
+mouse_filter = 2
+flipped = true
+
+[node name="bid" parent="PanelContainer/MarginContainer/CenterContainer" instance=ExtResource("7_1lbyx")]
+layout_mode = 2
